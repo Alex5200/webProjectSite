@@ -50,7 +50,7 @@
             <div class="container bloc-lg">
                 <div class="row">
                     <div class="col-lg-8 offset-lg-2">
-                        <h3 class="mg-md float-lg-none text-lg-center h3-bloc-21-style btn-resize-mode tc-denim"><a class="ltc-denim" href="index.html">Транзистор PNP</a><br></h3>
+                        <h3 class="mg-md float-lg-none text-lg-center h3-bloc-21-style btn-resize-mode tc-denim"><a class="ltc-denim" href="index.html">PNP-транзистор (биполярный)</a><br></h3>
                     </div>
                 </div>
                 <div class="row">
@@ -66,12 +66,34 @@
                                 <div class="tab-pane fade show disable" id="nav-9756-content-2" role="tabpanel" aria-labelledby="nav-9756-content-2"><img src="img/lazyload-ph.png" data-src="otherimg/PNPcircut.png" class="img-fluid mx-auto d-block lazyload" alt="_cox80PzA3a.blob" /></div>
                             </div>
                         </div>
+                        <div class="tab-content">
+                            <div>
+                                <div class="form-group backss"><label class="label-style text-lg-center"><a class="" href="index.html">Код</a></label>
+                                    <a style="color:black"><br> <br> void setup() <br> {
+                                        <br> pinMode(2, OUTPUT);<br> }
+                                        <br>
+                                        <br> void loop()<br> {
+                                        <br> digitalWrite(2, HIGH);<br> delay(1000);
+                                        <br> digitalWrite(2, LOW);<br> delay(1000);
+                                        <br> }
+                                        <br>
+
+
+
+                                        <br></a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="col-sm-4 offset-lg-0 bakes">
                         <h3 class="mg-md h3-style tc-4887 tc-denim btn-resize-mode"><span><span class="fa fa-code"></span>Пояснение к устройству<br></span>
                         </h3>
-                        <p class="btn-resize-mode p-style">Пояснение к работе</p>
-                        <p>При нажатии кнопки цепь замыкаемся.
+                        <p class="btn-resize-mode p-style">Пояснение к коду</p>
+                        <p style="color: black;">Этот код включает и выключает мотор интервалом в 1 секунду.
+                        </p>
+                        <p class="btn-resize-mode p-style ">Пояснение к работе</p>
+                        <p style="color: black;">Моторы постоянного тока нельзя подключать напрямую к Arduino. <br><br> Это обусловлено тем, что пины не способны выдавать ток более 40 мА. <br> <br> Мотору же, в зависимости от нагрузки, необходимо несколько сотен миллиампер.
+                            <br><br> Потому возникает потребность увеличения мощности. <br> <br> Делается это, как-правило, с помощью транзисторов. <br>
                         </p>
                     </div>
                 </div>
