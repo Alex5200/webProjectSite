@@ -26,11 +26,20 @@ li{
 	margin-left: 5%;
 	margin-right: 5%;
 	border: solid 4px #146BAE;
-	border-radius: 20px;
+	border-radius: 5px;
+}
+.d1{
+	width: 500px;
 }
 .ws{
 	width: 100%;
 }
 .tabss{
 	height: 100%;
+}
+.tc-denim {
+	font-size: 46px;
+}
+.p-bloc-19-style{
+	font-size: 36px;
 }
