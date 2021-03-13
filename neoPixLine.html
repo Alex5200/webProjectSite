@@ -50,7 +50,7 @@
             <div class="container bloc-lg">
                 <div class="row">
                     <div class="col-lg-8 offset-lg-2">
-                        <h3 class="mg-md float-lg-none text-lg-center h3-bloc-21-style btn-resize-mode tc-denim"><a class="ltc-denim" href="index.html">Клавиатура 4х4</a><br></h3>
+                        <h3 class="mg-md float-lg-none text-lg-center h3-bloc-21-style btn-resize-mode tc-denim"><a class="ltc-denim" href="index.html">NeoPixel линия</a><br></h3>
                     </div>
                 </div>
                 <div class="row">
@@ -61,31 +61,41 @@
                                 <li class="nav-item"><a class="a-btn nav-link" id="nav-9756-tab-2" data-toggle="tab" href="#nav-9756-content-2" role="tab" aria-controls="nav-9756-content-2" aria-selected="false">EasyEDA</a></li>
                             </ul>
                             <div class="tab-content">
-                                <div class="tab-pane fade show active" id="nav-9756-content-1" role="tabpanel" aria-labelledby="nav-9756-content-1"><img src="img/lazyload-ph.png" data-src="imgCircut/numbad.png" class="img-fluid mx-auto d-block lazyload" alt="_HtL9P58LU9.blob" /></div>
+                                <div class="tab-pane fade show active" id="nav-9756-content-1" role="tabpanel" aria-labelledby="nav-9756-content-1"><img src="img/lazyload-ph.png" data-src="imgCircut/NeoPixelCurved.png" class="img-fluid mx-auto d-block lazyload" alt="_HtL9P58LU9.blob" /></div>
                                 <div class="tab-pane fade-tab-bs disabled" <!--</div> id="nav-9756-content-2" role="tabpanel" aria-labelledby="nav-9756-content-2">--><img src="img/lazyload-ph.png" data-src="easyEDA/" class="img-fluid mx-auto d-block lazyload" alt="_cox80PzA3a.blob" /></div>
                             </div>
                         </div>
                         <div class="tab-content">
                             <div>
                                 <div class="form-group backss"><label class="label-style text-lg-center"><a class="" href="index.html">Код</a></label>
-                                    <a style="color:black;"><br><br> #include
-                                        < "Keypad.h><br> const byte ROWS = 4;<br> const byte COLS = 4;<br> char hexaKeys[ROWS][COLS] = { {'1', '2', '3', 'A'},<br> {'4', '5', '6', 'B'},<br> {'7', '8', '9', 'C'},<br> {'*', '0', '#', 'D'}<br> };
-                                            <br>
-                                            <br> byte rowPins[ROWS] = {2,3,4,5};<br> byte colPins[COLS] = {6,7,8,9};<br>
-                                            <br> Keypad customKeypad = Keypad(makeKeymap(hexaKeys), rowPins, colPins, ROWS, COLS);<br> char customKey;<br> void setup(){<br> Serial.begin(9600);
-                                            <br> }
-                                            <br>
-                                            <br> void loop(){ <br> customKey = customKeypad.getKey();<br> Serial.println(customKey);
-                                            <br> delay(100);
-                                            <br> }
-                                            <br>
-                                    </a>
+                                    <a style="color:black"><br> <br> #include
+                                        < "Adafruit_NeoPixel.h> <br>
+
+                                        #define PIN 2<br>
+                                        #define NUMPIXELS 7<br>
+                                        
+                                        Adafruit_NeoPixel pixels = Adafruit_NeoPixel(NUMPIXELS, PIN, NEO_GRB + NEO_KHZ800);<br>
+                                        
+                                        void setup() {<br>
+                                          pixels.begin();<br>
+                                        }<br><br>
+                                        
+                                        void loop() {<br>
+                                          for (int i=0; i < NUMPIXELS; i++) {<br>
+                                            pixels.setPixelColor(i, pixels.Color(/*r*/ 255, 0/*g*/, 0/*b*/));<br>
+                                            pixels.show();<br>
+                                            delay(100);<br>
+                                          }<br>
+                                        }<br>
+                                        
+
+                                        <br></a>
                                 </div>
                             </div>
                         </div>
                     </div>
-
                 </div>
+
             </div>
         </div>
         <!-- bloc-21 END -->

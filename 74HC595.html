@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <link rel="canonical" href="http://setTheBaseURLInProjectSettings.com/Flexboxs.html" />
     <meta name="robots" content="index, follow" />
+    <link rel="shortcut icon" type="image/png" href="favicon.png">
     <link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css?3085">
     <link rel="stylesheet" type="text/css" href="style.css?9769">
     <link rel="stylesheet" type="text/css" href="./css/animate.min.css?1290">
@@ -49,7 +50,7 @@
             <div class="container bloc-lg">
                 <div class="row">
                     <div class="col-lg-8 offset-lg-2">
-                        <h3 class="mg-md float-lg-none text-lg-center h3-bloc-21-style btn-resize-mode tc-denim"><a class="ltc-denim">Потенцометр</a><br></h3>
+                        <h3 class="mg-md float-lg-none text-lg-center h3-bloc-21-style btn-resize-mode tc-denim"><a class="ltc-denim" href="index.html">74HC595 8-разрядный регистр сдвига</a><br></h3>
                     </div>
                 </div>
                 <div class="row">
@@ -60,21 +61,41 @@
                                 <li class="nav-item"><a class="a-btn nav-link" id="nav-9756-tab-2" data-toggle="tab" href="#nav-9756-content-2" role="tab" aria-controls="nav-9756-content-2" aria-selected="false">EasyEDA</a></li>
                             </ul>
                             <div class="tab-content">
-                                <div class="tab-pane fade show active" id="nav-9756-content-1" role="tabpanel" aria-labelledby="nav-9756-content-1"><img src="img/lazyload-ph.png" data-src="imgCircut/patenc.png" class="img-fluid mx-auto d-block lazyload" alt="_HtL9P58LU9.blob" /></div>
-                                <div class="tab-pane fade-tab-bs disabled" <!--</div> id="nav-9756-content-2" role="tabpanel" aria-labelledby="nav-9756-content-2">--><img src="img/lazyload-ph.png" data-src="easyEDA/" class="img-fluid mx-auto d-block lazyload" alt="_cox80PzA3a.blob" /></div>
+                                <div class="tab-pane fade show active" id="nav-9756-content-1" role="tabpanel" aria-labelledby="nav-9756-content-1"><img src="img/lazyload-ph.png" data-src="otherimg/74HC595.png" class="img-fluid mx-auto d-block lazyload" alt="_HtL9P58LU9.blob" /></div>
+                                <div class="tab-pane fade-tab-bs disabled"></div>
+                                <div class="tab-pane fade show disable" id="nav-9756-content-2" role="tabpanel" aria-labelledby="nav-9756-content-2"><img src="img/lazyload-ph.png" data-src="otherimg/74HC595C.png" class="img-fluid mx-auto d-block lazyload" alt="_cox80PzA3a.blob" /></div>
                             </div>
                         </div>
                         <div class="tab-content">
                             <div>
                                 <div class="form-group backss"><label class="label-style text-lg-center"><a class="" href="index.html">Код</a></label>
-                                    <a style="color:#004E83"><br> void setup() <br> {<br> pinMode(A0 , INPUT);<br> Serial.begin(9600);<br> }<br> void loop() <br> { <br> int val = analogRead(A0);
-                                        <br> Serial.println(val); <br> delay(500);<br> }
+                                    <a style="color:black"><br> <br> #define dataPin 8 // пин подключен к входу DS <br> #define latchPin 9 // пин подключен к входу ST_CP<br> #define clockPin 10 // пин подключен к входу SH_CP<br>
+                                        <br> void setup() {<br> pinMode(latchPin, OUTPUT);<br> pinMode(clockPin, OUTPUT);<br> pinMode(dataPin, OUTPUT);<br> digitalWrite(latchPin, HIGH);<br> }
+                                        <br><br> void loop() {<br> digitalWrite(latchPin, LOW);<br> shiftOut(dataPin, clockPin, LSBFIRST, B11111111);<br> digitalWrite(latchPin, HIGH);<br> delay(1000);
+                                        <br> }
+                                        <br>
+
+
+
+
                                         <br></a>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <div class="col-sm-4 offset-lg-0 bakes">
+                        <h3 class="mg-md h3-style tc-4887 tc-denim btn-resize-mode"><span><span class="fa fa-code"></span>Пояснение к устройству<br></span>
+                        </h3>
+                        <p class="btn-resize-mode p-style">Пояснение к коду</p>
+                        <p style="color: black;">Этот код позволяет управлять каждым светодиод по отдельности. <br> <br> В строке shiftOut(dataPin, clockPin, LSBFIRST, B11111111); меняется 1 на 0 и один или несколько светодиодов выключаются
 
+                        </p>
+                        <p class="btn-resize-mode p-style ">Пояснение к работе</p>
+                        <p style="color: black;">
+                            Рассмотрим типичную ситуацию, когда вам нужно больше выходов (пинов), чем может предложить контроллер Arduino. <br><br> В этом случае самый простой выход — использовать сдвиговый регистр.<br><br> В данном примере используется
+                            74HC595. <br><br>этот регистр позволяет контролировать 8 выходов, используя всего несколько выходов на самом контроллере.<br><br> При этом несколько таких регистров можно объединять последовательно для каскадирования.
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>

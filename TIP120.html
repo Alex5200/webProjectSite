@@ -50,7 +50,7 @@
             <div class="container bloc-lg">
                 <div class="row">
                     <div class="col-lg-8 offset-lg-2">
-                        <h3 class="mg-md float-lg-none text-lg-center h3-bloc-21-style btn-resize-mode tc-denim"><a class="ltc-denim" href="index.html">Клавиатура 4х4</a><br></h3>
+                        <h3 class="mg-md float-lg-none text-lg-center h3-bloc-21-style btn-resize-mode tc-denim"><a class="ltc-denim" href="index.html">TIP120</a><br></h3>
                     </div>
                 </div>
                 <div class="row">
@@ -61,31 +61,36 @@
                                 <li class="nav-item"><a class="a-btn nav-link" id="nav-9756-tab-2" data-toggle="tab" href="#nav-9756-content-2" role="tab" aria-controls="nav-9756-content-2" aria-selected="false">EasyEDA</a></li>
                             </ul>
                             <div class="tab-content">
-                                <div class="tab-pane fade show active" id="nav-9756-content-1" role="tabpanel" aria-labelledby="nav-9756-content-1"><img src="img/lazyload-ph.png" data-src="imgCircut/numbad.png" class="img-fluid mx-auto d-block lazyload" alt="_HtL9P58LU9.blob" /></div>
-                                <div class="tab-pane fade-tab-bs disabled" <!--</div> id="nav-9756-content-2" role="tabpanel" aria-labelledby="nav-9756-content-2">--><img src="img/lazyload-ph.png" data-src="easyEDA/" class="img-fluid mx-auto d-block lazyload" alt="_cox80PzA3a.blob" /></div>
+                                <div class="tab-pane fade show active" id="nav-9756-content-1" role="tabpanel" aria-labelledby="nav-9756-content-1"><img src="img/lazyload-ph.png" data-src="otherimg/TIP120.png" class="img-fluid mx-auto d-block lazyload" alt="_HtL9P58LU9.blob" /></div>
+                                <div class="tab-pane fade-tab-bs disabled"></div>
+                                <div class="tab-pane fade show disable" id="nav-9756-content-2" role="tabpanel" aria-labelledby="nav-9756-content-2"><img src="img/lazyload-ph.png" data-src="otherimg/TIP120Circut.png" class="img-fluid mx-auto d-block lazyload" alt="_cox80PzA3a.blob" /></div>
                             </div>
                         </div>
                         <div class="tab-content">
                             <div>
                                 <div class="form-group backss"><label class="label-style text-lg-center"><a class="" href="index.html">Код</a></label>
-                                    <a style="color:black;"><br><br> #include
-                                        < "Keypad.h><br> const byte ROWS = 4;<br> const byte COLS = 4;<br> char hexaKeys[ROWS][COLS] = { {'1', '2', '3', 'A'},<br> {'4', '5', '6', 'B'},<br> {'7', '8', '9', 'C'},<br> {'*', '0', '#', 'D'}<br> };
-                                            <br>
-                                            <br> byte rowPins[ROWS] = {2,3,4,5};<br> byte colPins[COLS] = {6,7,8,9};<br>
-                                            <br> Keypad customKeypad = Keypad(makeKeymap(hexaKeys), rowPins, colPins, ROWS, COLS);<br> char customKey;<br> void setup(){<br> Serial.begin(9600);
-                                            <br> }
-                                            <br>
-                                            <br> void loop(){ <br> customKey = customKeypad.getKey();<br> Serial.println(customKey);
-                                            <br> delay(100);
-                                            <br> }
-                                            <br>
-                                    </a>
+                                    <a style="color:black"><br> <br> void setup() <br> {<br> pinMode(2, OUTPUT);<br> } <br>void loop()<br> {<br> digitalWrite(2, HIGH); <br>delay(1000);<br> digitalWrite(2, LOW);<br> delay(1000); <br>}<br>
+
+
+
+                                        <br></a>
                                 </div>
                             </div>
                         </div>
                     </div>
 
+                    <div class="col-sm-4 offset-lg-0 bakes ">
+                        <h3 class="mg-md h3-style tc-4887 tc-denim btn-resize-mode "><span><span class="fa fa-code "></span>Пояснение к устройству<br></span>
+                        </h3>
+                        <p class="btn-resize-mode p-style ">Пояснение к код</p>
+                        <p style="color: black;">Этот код включает и выключает мотор интервалом в 1 секунду</p>
+                        <p class="btn-resize-mode p-style ">Пояснение к работе</p>
+                        <p style="color: black;">TIP120 это транзистор Дарлингтона или по другому составной транизтор n-p-n структурой. <br> <br> Составной транзистор это два или более транзисторов, изготовленных на одном полупроводниковом кристалле и запакованные в один общий
+                            корпус.<br> <br> Там же находится нагрузочный резистор в цепи эмиттера первого транзистора.<br><br> Основное достоинство составного транзистора это большой коэффициент усиления по току.<br>
+                        </p>
+                    </div>
                 </div>
+
             </div>
         </div>
         <!-- bloc-21 END -->
